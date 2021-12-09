@@ -10,8 +10,8 @@ rightWristY =0;
 
 left_wrist_score = 0;
 right_wrist_score = 0;
-//song_status1 = "Tera Naam.mp3";
-//song_status2 = "";
+song1_status = "";
+song2_status = "";
 
 function preload(){
     song = loadSound("Tera Naam.mp3");
@@ -56,29 +56,46 @@ function gotPoses(results) {
 }
 
 
-//var song_status1 = song;
-//var song_status2 = song_2;
+ 
 function draw(){
     image (video,0,0,600,500);
 
     
     fill ("#FF0000");
     stroke ("#FF0000");
-   
 
-
-    if( left_wrist_score > 0.2){
-    circle( leftWristX , leftWristY , 20 );
-    song_2.stop();
-    song.play();
+    song1_status = song.isPlaying();
+    song2_status = song_2.isPlaying();
+  
 
     }
+    if(right_wrist_score > 0.2)
+	{ 
+		circle(rightWristX,rightWristY,20);
 
-   // if(song_status2 == false ){
-       // song.play();
-        //document.getElementById("lbl_song_name").innerHTML = "song = " + "Tera Naam";
-//  }
+			song_2.stop();
 
-}
+		if(song1_status == false)
+		{
+			song.play();
+			document.getElementById("lbl_song_name").innerHTML = "Playing - Param Sundari";
+		}
+	}
+
+if(left_wrist_score > 0.2)
+	{
+		circle(leftWristX,leftWristY,20);
+
+			song.stop();
+
+		if(song2_status == false)
+		{
+			song_2.play();
+			document.getElementById("lbl_song_name").innerHTML = "Playing - Tera Naam";
+		}
+	}
+
+
+
 
 

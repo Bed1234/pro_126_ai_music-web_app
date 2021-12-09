@@ -67,8 +67,6 @@ function draw(){
     song1_status = song.isPlaying();
     song2_status = song_2.isPlaying();
   
-
-    }
     if(right_wrist_score > 0.2)
 	{ 
 		circle(rightWristX,rightWristY,20);
@@ -94,6 +92,8 @@ if(left_wrist_score > 0.2)
 			document.getElementById("lbl_song_name").innerHTML = "Playing - Tera Naam";
 		}
 	}
+    }
+   
 
 
 

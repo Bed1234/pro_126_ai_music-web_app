@@ -71,11 +71,11 @@ function draw(){
 	{ 
 		circle(rightWristX,rightWristY,20);
 
-			song_2.stop();
+			song.stop();
 
-		if(song1_status == false)
+		if(song2_status == false)
 		{
-			song.play();
+			song_2.play();
 			document.getElementById("lbl_song_name").innerHTML = "Playing - Param Sundari";
 		}
 	}
@@ -84,11 +84,11 @@ if(left_wrist_score > 0.2)
 	{
 		circle(leftWristX,leftWristY,20);
 
-			song.stop();
+			song_2.stop();
 
-		if(song2_status == false)
+		if(song1_status == false)
 		{
-			song_2.play();
+			song.play();
 			document.getElementById("lbl_song_name").innerHTML = "Playing - Tera Naam";
 		}
 	}
